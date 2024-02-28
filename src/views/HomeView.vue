@@ -1,18 +1,38 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container">
+      <div class="row">
+        <div class="col-8 col-md-12">
+          <InfoItem :infoData="regionData" />
+        </div>
+        <div class="col-4 col-md-12">
+          <RegionItem @sendDataToInfo="regionCompData" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import InfoItem from "@/components/pages/InfoItem.vue";
+import RegionItem from "@/components/pages/RegionItem.vue";
 export default {
-  name: 'HomeView',
+  name: "HomeView",
+  data() {
+    return {
+      regionData: {},
+    };
+  },
   components: {
-    HelloWorld
-  }
-}
+    RegionItem,
+    InfoItem,
+  },
+  methods: {
+    regionCompData(data) {
+      this.regionData = data;
+    },
+  },
+
+  mounted() {},
+};
 </script>

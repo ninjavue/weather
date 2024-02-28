@@ -1,30 +1,40 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <span v-if="isLoading" class="loading">
+    <img src="./assets/loading.gif" alt="" />
+  </span>
+  <main v-show="!isLoading">
+    <HeaderItem />
+    <router-view />
+  </main>
 </template>
 
+<script>
+import HeaderItem from "./components/HeaderItem.vue";
+export default {
+  data() {
+    return {
+      isLoading: false,
+    };
+  },
+  components: {
+    HeaderItem,
+  },
+  methods: {
+    openFullScreen() {
+      this.isLoading = true;
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 2000);
+    },
+  },
+  mounted() {
+    document.title = "Ob-havo";
+    this.openFullScreen();
+  },
+};
+</script>
+
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+@import "./styles/app.scss";
 </style>

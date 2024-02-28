@@ -1,0 +1,145 @@
+.regions {
+    margin-left: 60px;
+    border-radius: 10px;
+    background-color: #f4f2f2;
+    padding: 20px 0px;
+    justify-content: start;
+    align-items: start;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    margin-bottom: 50px;
+
+    & button {
+        display: none;
+    }
+
+    &.mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 0;
+        cursor: pointer;
+        padding: 20px 30px;
+        display: none;
+
+        & .regions-title {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    &-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        padding-left: 30px;
+    }
+}
+
+.region {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 11px 30px;
+    margin: 1px 0;
+
+    &.active,
+    &:hover {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+
+    &-title {
+        font-size: 16px;
+        font-weight: 500;
+
+        &:hover {
+            color: rgb(49, 79, 246);
+        }
+    }
+
+    &-check {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1.5px solid #ccc;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+
+
+
+    }
+
+    &.active {
+        .region-check {
+
+            & span {
+                width: 10px;
+                height: 10px;
+                background-color: rgb(49, 79, 246);
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 1050px) {
+    .regions {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 900px) {
+    .regions {
+        display: none;
+
+        &.show {
+            width: 100%;
+            height: auto;
+            z-index: 2;
+            display: block;
+            position: fixed;
+            top: 75px;
+            left: 0;
+            border-radius: 0;
+            margin: 0;
+            min-height: calc(100vh - 75px);
+            justify-content: space-between;
+
+            & button {
+                position: absolute;
+                top: 15px;
+                right: 22px;
+                border: none;
+                outline: none;
+                padding: 5px;
+                cursor: pointer;
+                display: block;
+
+                & i {
+                    font-size: 28px;
+                    color: rgb(0, 4, 255);
+                }
+            }
+
+
+        }
+
+        &.mobile {
+            display: flex;
+        }
+    }
+
+    .col-4 {
+        order: 1;
+    }
+
+    .col-8 {
+        order: 2;
+    }
+}

@@ -1,0 +1,75 @@
+header {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    margin-bottom: 40px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background-color: #fff;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0px;
+    padding-top: 0;
+
+
+
+    &-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: #333;
+
+        & img {
+            width: 80px;
+            height: 70px;
+        }
+
+        &>div {
+            font-size: 28px;
+            font-weight: 600;
+        }
+    }
+
+    &-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        border: none;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        background-color: white;
+        padding: 5px;
+        border-radius: 7px;
+        border-bottom: 2px solid #ccc;
+        cursor: pointer;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 20px 60px -30px, rgba(10, 37, 64, 0.35) 0px -4px 6px 0px inset;
+
+            & span {
+                color: #4838f5;
+            }
+        }
+
+        & img {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+
+        }
+
+        & span {
+            font-size: 18px;
+            font-weight: 500;
+
+        }
+
+    }
+}
