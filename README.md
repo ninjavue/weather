@@ -1,3 +1,5 @@
+<img src="https://github.com/yoldoshov2002/weather/blob/main/w.png" alt="img" />
+
 # weather
 
 ## Project setup
